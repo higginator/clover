@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="120" height="7" tilewidth="100" tileheight="100" nextobjectid="1">
+ <tileset firstgid="1" name="branch2" tilewidth="100" tileheight="100" tilecount="48">
+  <image source="queuemeleon/branches/branches-02.png" trans="493a30" width="1280" height="444"/>
+ </tileset>
+ <tileset firstgid="49" name="branch1" tilewidth="100" tileheight="100" tilecount="48">
+  <image source="queuemeleon/branches/branches-01.png" trans="493a30" width="1280" height="444"/>
+ </tileset>
+ <tileset firstgid="97" name="branch3" tilewidth="100" tileheight="100" tilecount="48">
+  <image source="queuemeleon/branches/branches-03.png" trans="493a30" width="1280" height="444"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="120" height="7">
+  <data encoding="base64" compression="zlib">
+   eJzt0OdOFFEAhuFFQIpKEUWxUBQELAhKEURAAQtN6YKK3oCIBRRQpIkN0Uv2IdlN9g/JjhuTTZgveTIzyfvjzIlEwoULFy5cKu4A6WSQyUGyyCaHXA5xmLSAfQPXuE4jTTTTwg1aaeMm7f/7R/fp8singEKOUsQxjlPMCU5yJGB/iw466eI2d+imh15eMssr5njNG97yjnkWeM+Hf+gTOcNd7nE/qZtMzZ3iNGc4SylllFPBOc5TSUnA/gF99DPAIEM85BHDLLLEMh/5FPdc4XO02WBzjz7WrbLGelyfyBlGGGUsmYtM0V2gmhpqucglLnOFOq5ST1XAfpwJJnnMFNM84SnP+MIWX/nG96jd9x/8jH7/5s8efazb5hc7cX0iZ5jhOS+Su8qU3F/hEkIS
+  </data>
+ </layer>
+</map>
