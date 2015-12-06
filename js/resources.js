@@ -11,24 +11,47 @@ game.resources = [
     //background
     {name: "bg",  type:"image", src: "data/map/bg.png"},
     
-    // //you spritesheet
-    // {name: "self-walk-short",  type:"image", src: "data/img/self-walk-short.png"},
-    // {name: "summer-self-walk",  type:"image", src: "data/img/summer-self-walk.png"},
-    // {name: "spring-self-walk",  type:"image", src: "data/img/spring-self-walk.png"},
-    // {name: "you-as-npc-walk",  type:"image", src: "data/img/you-as-npc-walk.png"},
-    // //font
+    //walking spritesheet
+    {name: "walk-b",  type:"image", src: "data/img/clover/walk/b.png"},
+    {name: "walk-br",  type:"image", src: "data/img/clover/walk/br.png"},
+    {name: "walk-g",  type:"image", src: "data/img/clover/walk/g.png"},
+    {name: "walk-o",  type:"image", src: "data/img/clover/walk/o.png"},      
+    {name: "walk-r",  type:"image", src: "data/img/clover/walk/r.png"},
+    {name: "walk-v",  type:"image", src: "data/img/clover/walk/v.png"},
+    {name: "walk-w",  type:"image", src: "data/img/clover/walk/w.png"},
+    {name: "walk-y",  type:"image", src: "data/img/clover/walk/y.png"}, 
+    //eating     
+    {name: "eat-b",  type:"image", src: "data/img/clover/eat/b.png"},
+    {name: "eat-g",  type:"image", src: "data/img/clover/eat/g.png"},
+    {name: "eat-o",  type:"image", src: "data/img/clover/eat/o.png"},
+    {name: "eat-r",  type:"image", src: "data/img/clover/eat/r.png"},
+    {name: "eat-v",  type:"image", src: "data/img/clover/eat/v.png"},
+    {name: "eat-y",  type:"image", src: "data/img/clover/eat/y.png"},
+    //end
+    {name: "end",  type:"image", src: "data/img/clover/end.png"},
+
+    //leaf sprites
+    {name: "leaf-b",  type:"image", src: "data/img/leaf/b.png"},
+    {name: "leaf-g",  type:"image", src: "data/img/leaf/g.png"},
+    {name: "leaf-o",  type:"image", src: "data/img/leaf/o.png"},
+    {name: "leaf-r",  type:"image", src: "data/img/leaf/r.png"},
+    {name: "leaf-v",  type:"image", src: "data/img/leaf/v.png"},
+    {name: "leaf-y",  type:"image", src: "data/img/leaf/y.png"},
+
+    
+        // //font
     // {name: "32x32_font", type:"image", src: "data/img/font/idek.png"},
 
     // Maps
     {name: "level-01", type: "tmx", src: "data/level-01.tmx"},
 	
     // Background Music
-	// {name: "fall", type: "audio", src: "data/bgm/"},
+	{name: "bg", type: "audio", src: "data/bgm/"},
+    {name: "eat", type: "audio", src: "data/sfx/"},
+
     
     // Title Screen
     // {name: "title_screen", type: "image", src: "data/img/gui/title_screen.png"},
 
 	
-    // Cling
-	// {name: "cling", type: "audio", src: "data/sfx/"},
 ];
