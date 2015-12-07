@@ -52,7 +52,9 @@ var game = {
           me.input.bindKey(me.input.KEY.Q, "o", true);
           me.input.bindKey(me.input.KEY.W, "v", true);
           me.input.bindKey(me.input.KEY.E, "g", true);                   
-          me.input.bindKey(me.input.KEY.R, "br", true);                   
+          me.input.bindKey(me.input.KEY.R, "br", true); 
+          me.input.bindKey(me.input.KEY.Z, "w", true);
+                  
 
         // Start the game.
         me.state.change(me.state.PLAY);

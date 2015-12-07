@@ -42,11 +42,20 @@ game.PlayerEntity = me.Entity.extend({
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
 
-        // define a basic walking animation (using all frames)
-        this.renderable.addAnimation("walk", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+
+        // define color walking animations using frame indexing
+        this.renderable.addAnimation("walk-b", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+        this.renderable.addAnimation("walk-br", [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]);
+        this.renderable.addAnimation("walk-g", [24, 25, 26, 27, 28,29,30,31,32,33,34,35]);
+        this.renderable.addAnimation("walk-o", [36,37,38,39,40,41,42,43,44,45,46,47]);
+        this.renderable.addAnimation("walk-r", [48,49,50,51,52,53,54,55,56,57,58,59]);
+        this.renderable.addAnimation("walk-v", [60,61,62,63,64,65,66,67,68,69,70,71]);
+        this.renderable.addAnimation("walk-w", [72,73,74,75,76,77,78,79,80,81,82,83]);
+        this.renderable.addAnimation("walk-y", [84,85,86,87,88,89,90,91,92,93,94,95]);
         
+
         // set the standing animation as default
-        this.renderable.setCurrentAnimation("walk");
+        this.renderable.setCurrentAnimation("walk-w");
 
 
         // Create a vector that represents the player center point
@@ -69,10 +78,15 @@ game.PlayerEntity = me.Entity.extend({
  //always walk right
         this.body.vel.x += this.body.accel.x * me.timer.tick;
 
-        if (me.input.isKeyPressed('red')) {
+        if (me.input.isKeyPressed('r')) {
           //change sprite to render
-          //this.renderable.setCurrentAnimation("walk-red");
-            //TODO- define walking in all colors :)
+          this.renderable.setCurrentAnimation("walk-r");
+          
+        }
+        if (me.input.isKeyPressed('w')) {
+          //change sprite to render
+          this.renderable.setCurrentAnimation("walk-w");
+          
         }
      
         // apply physics to the body (this moves the entity)
