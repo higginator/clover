@@ -41,9 +41,9 @@ game.resources = [
 
     //leaf sprites
     {name: "leaf-b",  type:"image", src: "data/img/leaf/b.png"}, //w: 190
-    {name: "leaf-g",  type:"image", src: "data/img/leaf/g.png"},//w: 155
+    {name: "leaf-g",  type:"image", src: "data/img/leaf/g.png"},//w: 154
     {name: "leaf-o",  type:"image", src: "data/img/leaf/o.png"},//w: 154
-    {name: "leaf-r",  type:"image", src: "data/img/leaf/r.png"},//w: 154
+    {name: "leaf-r",  type:"image", src: "data/img/leaf/r.png"},//w: 155
     {name: "leaf-v",  type:"image", src: "data/img/leaf/v.png"},//w: 154
     {name: "leaf-y",  type:"image", src: "data/img/leaf/y.png"},//w: 154
 

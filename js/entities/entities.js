@@ -226,10 +226,125 @@ game.LeafB = me.CollectableEntity.extend({
 			other.renderable.setCurrentAnimation("eat-b","walk-b");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
+			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
+			// 	me.game.world.removeChild(game.LeafB);
+			// 	console.log('removed?');
+			// }, 1000);
 		} else {
 			game.data.score = 0;
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		return false
+	}
+});
+
+game.LeafR = me.CollectableEntity.extend({
+	init : function(x, y, settings) {
+		this._super(me.CollectableEntity, 'init', [x, y , settings]);
+	},
+	onCollision : function (response, other) {
+		if (curr_color.localeCompare('red') == 0) {
+			me.audio.play("eat");
+			other.renderable.setCurrentAnimation("eat-r","walk-r");
+			game.data.score += 1;
+			me.game.world.removeChild(this);
+			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
+			// 	me.game.world.removeChild(game.LeafB);
+			// 	console.log('removed?');
+			// }, 1000);
+		} else {
+			game.data.score = 0;
+		}
+			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		return false
+	}
+});
+
+game.LeafO = me.CollectableEntity.extend({
+	init : function(x, y, settings) {
+		this._super(me.CollectableEntity, 'init', [x, y , settings]);
+	},
+	onCollision : function (response, other) {
+		if (curr_color.localeCompare('orange') == 0) {
+			me.audio.play("eat");
+			other.renderable.setCurrentAnimation("eat-o","walk-o");
+			game.data.score += 1;
+			me.game.world.removeChild(this);
+			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
+			// 	me.game.world.removeChild(game.LeafB);
+			// 	console.log('removed?');
+			// }, 1000);
+		} else {
+			game.data.score = 0;
+		}
+			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		return false
+	}
+});
+
+game.LeafV = me.CollectableEntity.extend({
+	init : function(x, y, settings) {
+		this._super(me.CollectableEntity, 'init', [x, y , settings]);
+	},
+	onCollision : function (response, other) {
+		if (curr_color.localeCompare('violet') == 0) {
+			me.audio.play("eat");
+			other.renderable.setCurrentAnimation("eat-v","walk-v");
+			game.data.score += 1;
+			me.game.world.removeChild(this);
+			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
+			// 	me.game.world.removeChild(game.LeafB);
+			// 	console.log('removed?');
+			// }, 1000);
+		} else {
+			game.data.score = 0;
+		}
+			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		return false
+	}
+});
+
+game.LeafG = me.CollectableEntity.extend({
+	init : function(x, y, settings) {
+		this._super(me.CollectableEntity, 'init', [x, y , settings]);
+	},
+	onCollision : function (response, other) {
+		if (curr_color.localeCompare('green') == 0) {
+			me.audio.play("eat");
+			other.renderable.setCurrentAnimation("eat-g","walk-g");
+			game.data.score += 1;
+			me.game.world.removeChild(this);
+			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
+			// 	me.game.world.removeChild(game.LeafB);
+			// 	console.log('removed?');
+			// }, 1000);
+		} else {
+			game.data.score = 0;
+		}
+			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+		return false
+	}
+});
+
+game.LeafY = me.CollectableEntity.extend({
+	init : function(x, y, settings) {
+		this._super(me.CollectableEntity, 'init', [x, y , settings]);
+	},
+	onCollision : function (response, other) {
+		if (curr_color.localeCompare('yellow') == 0) {
+			me.audio.play("eat");
+			other.renderable.setCurrentAnimation("eat-y","walk-y");
+			game.data.score += 1;
+			me.game.world.removeChild(this);
+			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
+			// 	me.game.world.removeChild(game.LeafB);
+			// 	console.log('removed?');
+			// }, 1000);
+		} else {
+			game.data.score = 0;
+		}
+			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			//reset code
 		return false
 	}
 });

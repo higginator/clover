@@ -21,22 +21,17 @@
   </data>
  </layer>
  <objectgroup name="collision">
-  <object x="-3951.44" y="634.065" width="12017.3" height="30"/>
+  <object x="-3951.44" y="634.065" width="15976.6" height="53.9234"/>
  </objectgroup>
  <objectgroup name="leaves">
-  <object name="LeafB" x="1130.73" y="339.665" width="290" height="215">
+  <object name="LeafG" x="1124.06" y="339.665" width="273" height="215">
    <properties>
-    <property name="framewidth" value="190"/>
-    <property name="image" value="leaf-b"/>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-g"/>
    </properties>
   </object>
   <object name="LeafB" x="615.615" y="334.958" width="290" height="215">
-   <properties>
-    <property name="framewidth" value="190"/>
-    <property name="image" value="leaf-b"/>
-   </properties>
-  </object>
-  <object name="LeafB" x="894.944" y="370.712" width="290" height="215">
    <properties>
     <property name="framewidth" value="190"/>
     <property name="image" value="leaf-b"/>
@@ -51,5 +46,32 @@
    </properties>
   </object>
   <object name="VPCam" x="152.968" y="434.783" width="100" height="100"/>
+  <object name="LeafR" x="1959.05" y="339.093" width="290" height="215">
+   <properties>
+    <property name="framewidth" value="155"/>
+    <property name="image" value="leaf-r"/>
+   </properties>
+  </object>
+  <object name="LeafY" x="1590.73" y="339.093" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-y"/>
+   </properties>
+  </object>
+  <object name="LeafO" x="2355" y="343.697" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="212"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-o"/>
+   </properties>
+  </object>
+  <object name="LeafV" x="2856.84" y="348.301" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="214"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-v"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
