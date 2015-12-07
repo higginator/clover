@@ -1,6 +1,5 @@
 var curr_color = 'white'; //here's the global color variable
 
-
 /**
  * BS Camera
  */
@@ -45,28 +44,48 @@ game.PlayerEntity = me.Entity.extend({
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
 
+    this.renderables = {};
+    this.renderables.walkingSheet = this.renderable;
+    this.renderables.eatingSheet = new me.AnimationSheet(0, 0, {
+            image : "eat",
+            framewidth : 640,
+            frameheight : 308
+        });
+
+    var spriteContainer = new me.Container(0,0,640,308);
+    spriteContainer.addChild(this.renderables.walkingSheet);
+    spriteContainer.addChild(this.renderables.eatingSheet);
+
+    this.renderable = spriteContainer;
+    this.renderable.alwaysUpdate = true;
+
 
         // define color walking animations using frame indexing
-        this.renderable.addAnimation("walk-b", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-        this.renderable.addAnimation("walk-br", [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]);
-        this.renderable.addAnimation("walk-g", [24, 25, 26, 27, 28,29,30,31,32,33,34,35]);
-        this.renderable.addAnimation("walk-o", [36,37,38,39,40,41,42,43,44,45,46,47]);
-        this.renderable.addAnimation("walk-r", [48,49,50,51,52,53,54,55,56,57,58,59]);
-        this.renderable.addAnimation("walk-v", [60,61,62,63,64,65,66,67,68,69,70,71]);
-        this.renderable.addAnimation("walk-w", [72,73,74,75,76,77,78,79,80,81,82,83]);
-        this.renderable.addAnimation("walk-y", [84,85,86,87,88,89,90,91,92,93,94,95]);
+        this.renderables.walkingSheet.addAnimation("walk-b", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+        this.renderables.walkingSheet.addAnimation("walk-br", [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]);
+        this.renderables.walkingSheet.addAnimation("walk-g", [24, 25, 26, 27, 28,29,30,31,32,33,34,35]);
+        this.renderables.walkingSheet.addAnimation("walk-o", [36,37,38,39,40,41,42,43,44,45,46,47]);
+        this.renderables.walkingSheet.addAnimation("walk-r", [48,49,50,51,52,53,54,55,56,57,58,59]);
+        this.renderables.walkingSheet.addAnimation("walk-v", [60,61,62,63,64,65,66,67,68,69,70,71]);
+        this.renderables.walkingSheet.addAnimation("walk-w", [72,73,74,75,76,77,78,79,80,81,82,83]);
+        this.renderables.walkingSheet.addAnimation("walk-y", [84,85,86,87,88,89,90,91,92,93,94,95]);
+        this.renderables.walkingSheet.addAnimation("none", [96,96,96,96,96,96,96,96,96,96,96,96]);
+
         
+        this.renderables.eatingSheet.addAnimation("eat-b", [0, 1, 2, 3, 4, 5]);
+        this.renderables.eatingSheet.addAnimation("eat-g", [6, 7, 8, 9, 10, 11]);
 
-        // set the standing animation as default
-        this.renderable.setCurrentAnimation("walk-w");
+        this.renderables.eatingSheet.addAnimation("none", [37,37,37,37,37,37]);
 
+        // set the white animation as default
+        this.renderables.walkingSheet.setCurrentAnimation("walk-w");
+        this.renderables.eatingSheet.setCurrentAnimation("none");
 
         // Create a vector that represents the player center point
         this.center = new me.Vector2d(this.hWidth, this.hHeight);
 
         // Create the "tracking vector"
-        this.tracking = this.pos.clone();
-        //me.game.viewport.move(300,0);
+
         // set the default horizontal & vertical speed (accel vector)
         this.body.setVelocity(3, 15);
 
@@ -77,6 +96,8 @@ game.PlayerEntity = me.Entity.extend({
      * update the entity
      */
     update : function (dt) {
+        
+        old = this.renderable;
 
         //always walk right
         this.body.vel.x += this.body.accel.x * me.timer.tick;
@@ -84,13 +105,44 @@ game.PlayerEntity = me.Entity.extend({
 
         if (me.input.isKeyPressed('r')) {
           //change sprite to render
-          this.renderable.setCurrentAnimation("walk-r");
+          this.renderables.walkingSheet.setCurrentAnimation("walk-r");
           //set global var
-          
+          curr_color='red';
+        }
+        if (me.input.isKeyPressed('g')) {
+          this.renderables.walkingSheet.setCurrentAnimation("walk-g");
+          curr_color='green';
         }
         if (me.input.isKeyPressed('w')) {
-          this.renderable.setCurrentAnimation("walk-w");
-          
+          this.renderables.walkingSheet.setCurrentAnimation("walk-w");
+          curr_color='white';
+        }
+        if (me.input.isKeyPressed('br')) {
+          this.renderables.walkingSheet.setCurrentAnimation("walk-br");
+          curr_color='brown';
+        }
+        if (me.input.isKeyPressed('o')) {
+          this.renderables.walkingSheet.setCurrentAnimation("walk-o");
+          curr_color='orange';
+        }
+        if (me.input.isKeyPressed('v')) {
+          this.renderables.walkingSheet.setCurrentAnimation("walk-v");
+          curr_color='violet';
+        }
+        if (me.input.isKeyPressed('y')) {
+          this.renderables.walkingSheet.setCurrentAnimation("walk-y");
+          curr_color='yellow';
+        }
+        if (me.input.isKeyPressed('b')) {
+          this.renderables.walkingSheet.setCurrentAnimation("walk-b");
+          curr_color='blue';
+        }
+        
+        if (me.input.isKeyPressed('eat')) {
+        //define eating animations
+          this.renderables.eatingSheet.setCurrentAnimation("eat-b","none");
+          this.renderables.walkingSheet.setCurrentAnimation("none","walk-w");
+          curr_color='blue';
         }
 
         // apply physics to the body (this moves the entity)

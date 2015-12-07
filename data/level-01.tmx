@@ -31,7 +31,6 @@
  </objectgroup>
  <objectgroup name="collision"/>
  <objectgroup name="leaves">
-  <object name="LeafEntity" x="817.114" y="201.342" width="204.698" height="312.081"/>
   <object name="LeafEntity" x="2000.36" y="201.342" width="204.698" height="312.081"/>
   <object name="LeafEntity" x="2691.2" y="203.792" width="204.698" height="312.081"/>
   <object name="LeafEntity" x="3198.3" y="198.893" width="204.698" height="312.081"/>
@@ -52,6 +51,6 @@
   <object name="LeafEntity" x="11601" y="208.692" width="204.698" height="312.081"/>
   <object name="LeafEntity" x="3837.99" y="218.475" width="204.698" height="312.081"/>
   <object name="LeafEntity" x="6247.94" y="211.141" width="204.698" height="312.081"/>
-  <object x="-13.4864" y="635.24" width="12017.3" height="30"/>
+  <object x="-13.4864" y="641.24" width="12017.3" height="30"/>
  </objectgroup>
 </map>

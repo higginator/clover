@@ -14,7 +14,8 @@ game.resources = [
     //walking spritesheet
     //big one
     {name: "walk",  type:"image", src: "data/img/clover/walk/all.png"},
-    
+    {name: "eat",  type:"image", src: "data/img/clover/eat/eat.png"},
+
     //blah, dont use probably?
     {name: "walk-b",  type:"image", src: "data/img/clover/walk/b.png"},
     {name: "walk-br",  type:"image", src: "data/img/clover/walk/br.png"},
