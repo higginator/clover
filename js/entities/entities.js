@@ -242,7 +242,7 @@ game.LeafB = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('blue') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-b","walk-b");
+			other.renderable.setCurrentAnimation("eat-b","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -253,6 +253,7 @@ game.LeafB = me.CollectableEntity.extend({
 			game.data.score = 0;
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -264,7 +265,7 @@ game.LeafR = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('red') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-r","walk-r");
+			other.renderable.setCurrentAnimation("eat-r","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -275,6 +276,7 @@ game.LeafR = me.CollectableEntity.extend({
 			game.data.score = 0;
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -286,7 +288,7 @@ game.LeafO = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('orange') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-o","walk-o");
+			other.renderable.setCurrentAnimation("eat-o","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -297,6 +299,7 @@ game.LeafO = me.CollectableEntity.extend({
 			game.data.score = 0;
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -308,7 +311,7 @@ game.LeafV = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('violet') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-v","walk-v");
+			other.renderable.setCurrentAnimation("eat-v","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -319,6 +322,7 @@ game.LeafV = me.CollectableEntity.extend({
 			game.data.score = 0;
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -330,7 +334,7 @@ game.LeafG = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('green') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-g","walk-g");
+			other.renderable.setCurrentAnimation("eat-g","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -341,6 +345,7 @@ game.LeafG = me.CollectableEntity.extend({
 			game.data.score = 0;
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -352,7 +357,7 @@ game.LeafY = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('yellow') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-y","walk-y");
+			other.renderable.setCurrentAnimation("eat-y","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -363,6 +368,7 @@ game.LeafY = me.CollectableEntity.extend({
 			game.data.score = 0;
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			setAllControllersUnpinged();
 			//reset code
 		return false
 	}
