@@ -45,7 +45,12 @@ var game = {
         // add our player entity in the entity pool
         me.pool.register("mainPlayer", game.PlayerEntity);
         me.pool.register("VPCam", game.VPCam);
-        me.pool.register("LeafEntity", game.LeafEntity);
+        me.pool.register("LeafB", game.LeafB);
+        me.pool.register("LeafR", game.LeafR);
+        me.pool.register("LeafY", game.LeafY);
+        me.pool.register("LeafO", game.LeafO);
+        me.pool.register("LeafV", game.LeafV);
+        me.pool.register("LeafG", game.LeafG);
 
           // enable the keyboard
           me.input.bindKey(me.input.KEY.A, "r", true);
