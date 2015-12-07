@@ -6,7 +6,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
         // load a level
         me.levelDirector.loadLevel("level-01");
-     
+        me.audio.playTrack("bg");
 
         // reset the score
         game.data.score = 0;
@@ -20,6 +20,7 @@ game.PlayScreen = me.ScreenObject.extend({
      *  action to perform when leaving this screen (state change)
      */
     onDestroyEvent: function() {
+        me.audio.stopTrack();
         // remove the HUD from the game world
         me.game.world.removeChild(this.HUD);
     }
