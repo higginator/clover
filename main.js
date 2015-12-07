@@ -45,6 +45,10 @@ app.on('ready', function() {
   });
 });*/
 
+http.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+
 app.get('/', function(request, response) {
   response.sendfile('index.html', {root: __dirname});
 });
@@ -68,7 +72,12 @@ io.on('connection', function(socket) {
   console.log('new user connected');
 })
 
+/*
 http.listen(3000, function() {
   console.log('app running on port ' + 3000);
-})
+})*/
+
+http.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
