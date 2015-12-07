@@ -1,5 +1,5 @@
-var GameController = function() {
+var gameController = function() {
 	var controller = Object();
-	controlled.pinged = false;
+	controller.pinged = false;
 	return controller;
 }

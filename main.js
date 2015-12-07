@@ -54,6 +54,16 @@ app.get('/red', function(request, response) {
   io.emit('red');
 });
 
+app.get('/blue', function(request, response) {
+  response.send('<h1>blue sent to game</h1>');
+  io.emit('blue');
+});
+
+app.get('/yellow', function(request, response) {
+  response.send('<h1>yellow sent to game</h1>');
+  io.emit('yellow');
+});
+
 io.on('connection', function(socket) {
   console.log('new user connected');
 })

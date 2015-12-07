@@ -251,8 +251,10 @@ game.LeafB = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
 			setAllControllersUnpinged();
 		return false
 	}
@@ -274,8 +276,10 @@ game.LeafR = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
 			setAllControllersUnpinged();
 		return false
 	}
@@ -297,8 +301,10 @@ game.LeafO = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
 			setAllControllersUnpinged();
 		return false
 	}
@@ -320,8 +326,10 @@ game.LeafV = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
 			setAllControllersUnpinged();
 		return false
 	}
@@ -343,8 +351,10 @@ game.LeafG = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
 			setAllControllersUnpinged();
 		return false
 	}
@@ -366,8 +376,10 @@ game.LeafY = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
 			setAllControllersUnpinged();
 			//reset code
 		return false
