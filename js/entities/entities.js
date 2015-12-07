@@ -11,17 +11,15 @@ game.VPCam = me.Entity.extend({
     init:function (x, y, settings) {
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
-      this.body.setVelocity(3, 15);
-
-
+        this.body.setVelocity(3, 15);
+        this.alwaysUpdate=true;
     },
 
     update : function (dt) {
         //always walk right
-        this.body.vel.x += this.body.accel.x * me.timer.tick;
+        this.body.vel.x += .2*dt;
         this.body.update(dt);
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        this.alwaysUpdate = true;
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
     },
    
@@ -43,6 +41,7 @@ game.PlayerEntity = me.Entity.extend({
     init:function (x, y, settings) {
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
+    this.alwaysUpdate = true;
 
     this.renderables = {};
     this.renderables.walkingSheet = this.renderable;
@@ -57,14 +56,19 @@ game.PlayerEntity = me.Entity.extend({
             frameheight : 291
         });
 
+this.renderables.walkingSheet.alwaysUpdate = true;
+this.renderables.alwaysUpdate = true;
+
     var spriteContainer = new me.Container(0,0,640,308);
     spriteContainer.addChild(this.renderables.walkingSheet);
     spriteContainer.addChild(this.renderables.eatingSheet);
     spriteContainer.addChild(this.renderables.finSheet);
+    
+    spriteContainer.alwaysUpdate = true;
 
     this.renderable = spriteContainer;
     this.renderable.alwaysUpdate = true;
-
+    // ensure the player is updated even when outside of the viewport
 
         // define color walking animations using frame indexing
         this.renderables.walkingSheet.addAnimation("walk-b", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
@@ -105,10 +109,8 @@ game.PlayerEntity = me.Entity.extend({
      */
     update : function (dt) {
         
-        old = this.renderable;
-
         //always walk right
-        this.body.vel.x += this.body.accel.x * me.timer.tick;
+        this.body.vel.x += .2*dt;
 
 
         if (me.input.isKeyPressed('r')) {
@@ -164,9 +166,6 @@ game.PlayerEntity = me.Entity.extend({
 
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
-
-        // ensure the player is updated even when outside of the viewport
-        this.alwaysUpdate = true;
      
         // handle collisions against other shapes
         me.collision.check(this);
@@ -214,5 +213,3 @@ game.LeafEntity = me.CollectableEntity.extend({
   }
 });
 
-// register our object entities in the object pool
-me.pool.register("LeafEntity", game.LeafEntity);
