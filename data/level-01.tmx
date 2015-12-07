@@ -27,30 +27,10 @@
     <property name="image" value="walk"/>
    </properties>
   </object>
-  <object name="VPCam" x="284.149" y="434.783" width="100" height="100"/>
+  <object name="VPCam" x="152.968" y="434.783" width="100" height="100"/>
  </objectgroup>
  <objectgroup name="collision"/>
  <objectgroup name="leaves">
-  <object name="LeafEntity" x="2000.36" y="201.342" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="2691.2" y="203.792" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="3198.3" y="198.893" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="4511.38" y="211.141" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="5243.87" y="208.692" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="5836.71" y="211.141" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="6563.54" y="202.164" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="6904.82" y="206.242" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="7492.76" y="211.141" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="8009.67" y="201.342" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="8396.73" y="250.338" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="8852.39" y="213.591" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="9435.44" y="208.692" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="9866.6" y="206.242" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="10243.9" y="206.242" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="10503.5" y="206.242" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="11093.9" y="206.242" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="11601" y="208.692" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="3837.99" y="218.475" width="204.698" height="312.081"/>
-  <object name="LeafEntity" x="6247.94" y="211.141" width="204.698" height="312.081"/>
   <object x="-13.4864" y="641.24" width="12017.3" height="30"/>
  </objectgroup>
 </map>

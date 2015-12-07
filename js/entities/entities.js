@@ -51,10 +51,16 @@ game.PlayerEntity = me.Entity.extend({
             framewidth : 640,
             frameheight : 308
         });
+    this.renderables.finSheet = new me.AnimationSheet(0, 0, {
+            image : "end",
+            framewidth : 289,
+            frameheight : 291
+        });
 
     var spriteContainer = new me.Container(0,0,640,308);
     spriteContainer.addChild(this.renderables.walkingSheet);
     spriteContainer.addChild(this.renderables.eatingSheet);
+    spriteContainer.addChild(this.renderables.finSheet);
 
     this.renderable = spriteContainer;
     this.renderable.alwaysUpdate = true;
@@ -73,18 +79,20 @@ game.PlayerEntity = me.Entity.extend({
 
         
         this.renderables.eatingSheet.addAnimation("eat-b", [0, 1, 2, 3, 4, 5]);
-        this.renderables.eatingSheet.addAnimation("eat-g", [6, 7, 8, 9, 10, 11]);
-
+        this.renderables.eatingSheet.addAnimation("eat-g", [6, 8, 9, 10, 11, 7]);
+        this.renderables.eatingSheet.addAnimation("eat-o", [12, 13, 14, 15, 16, 17]);
+        this.renderables.eatingSheet.addAnimation("eat-r", [18, 19, 20, 21, 22, 23]);
+        this.renderables.eatingSheet.addAnimation("eat-v", [24, 25, 26, 27, 28, 29]);
+        this.renderables.eatingSheet.addAnimation("eat-y", [30, 31, 32, 33, 34, 35]);
         this.renderables.eatingSheet.addAnimation("none", [37,37,37,37,37,37]);
+
+        this.renderables.finSheet.addAnimation("done", [0,1], 150);
+        this.renderables.finSheet.addAnimation("none", [2,2]);
 
         // set the white animation as default
         this.renderables.walkingSheet.setCurrentAnimation("walk-w");
         this.renderables.eatingSheet.setCurrentAnimation("none");
-
-        // Create a vector that represents the player center point
-        this.center = new me.Vector2d(this.hWidth, this.hHeight);
-
-        // Create the "tracking vector"
+        this.renderables.finSheet.setCurrentAnimation("none");
 
         // set the default horizontal & vertical speed (accel vector)
         this.body.setVelocity(3, 15);
@@ -137,13 +145,22 @@ game.PlayerEntity = me.Entity.extend({
           this.renderables.walkingSheet.setCurrentAnimation("walk-b");
           curr_color='blue';
         }
-        
+
         if (me.input.isKeyPressed('eat')) {
         //define eating animations
           this.renderables.eatingSheet.setCurrentAnimation("eat-b","none");
-          this.renderables.walkingSheet.setCurrentAnimation("none","walk-w");
-          curr_color='blue';
+          this.renderables.walkingSheet.setCurrentAnimation("none","walk-b");
         }
+
+        if (me.input.isKeyPressed('fin')) {
+          this.body.vel = new me.Vector2d(0,0);
+          this.renderables.eatingSheet.setCurrentAnimation("none");
+          this.renderables.walkingSheet.setCurrentAnimation("none");
+          this.renderables.finSheet.setCurrentAnimation("done");
+          return;
+
+        }
+
 
         // apply physics to the body (this moves the entity)
         this.body.update(dt);

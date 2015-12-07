@@ -56,7 +56,8 @@ var game = {
           me.input.bindKey(me.input.KEY.E, "g", true);                   
           me.input.bindKey(me.input.KEY.R, "br", true); 
           me.input.bindKey(me.input.KEY.Z, "w", true);
-          me.input.bindKey(me.input.KEY.p, "eat", true); //DEBUG- DELETE ME!
+          me.input.bindKey(me.input.KEY.P, "eat", true); //DEBUG- DELETE ME!
+          me.input.bindKey(me.input.KEY.UP, "fin", true); //game is over
                   
 
         // Start the game.

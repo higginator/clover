@@ -16,22 +16,22 @@ game.resources = [
     {name: "walk",  type:"image", src: "data/img/clover/walk/all.png"},
     {name: "eat",  type:"image", src: "data/img/clover/eat/eat.png"},
 
-    //blah, dont use probably?
-    {name: "walk-b",  type:"image", src: "data/img/clover/walk/b.png"},
-    {name: "walk-br",  type:"image", src: "data/img/clover/walk/br.png"},
-    {name: "walk-g",  type:"image", src: "data/img/clover/walk/g.png"},
-    {name: "walk-o",  type:"image", src: "data/img/clover/walk/o.png"},      
-    {name: "walk-r",  type:"image", src: "data/img/clover/walk/r.png"},
-    {name: "walk-v",  type:"image", src: "data/img/clover/walk/v.png"},
-    {name: "walk-w",  type:"image", src: "data/img/clover/walk/w.png"},
-    {name: "walk-y",  type:"image", src: "data/img/clover/walk/y.png"}, 
-    //eating     
-    {name: "eat-b",  type:"image", src: "data/img/clover/eat/b.png"},
-    {name: "eat-g",  type:"image", src: "data/img/clover/eat/g.png"},
-    {name: "eat-o",  type:"image", src: "data/img/clover/eat/o.png"},
-    {name: "eat-r",  type:"image", src: "data/img/clover/eat/r.png"},
-    {name: "eat-v",  type:"image", src: "data/img/clover/eat/v.png"},
-    {name: "eat-y",  type:"image", src: "data/img/clover/eat/y.png"},
+    // //blah, dont use probably?
+    // {name: "walk-b",  type:"image", src: "data/img/clover/walk/b.png"},
+    // {name: "walk-br",  type:"image", src: "data/img/clover/walk/br.png"},
+    // {name: "walk-g",  type:"image", src: "data/img/clover/walk/g.png"},
+    // {name: "walk-o",  type:"image", src: "data/img/clover/walk/o.png"},      
+    // {name: "walk-r",  type:"image", src: "data/img/clover/walk/r.png"},
+    // {name: "walk-v",  type:"image", src: "data/img/clover/walk/v.png"},
+    // {name: "walk-w",  type:"image", src: "data/img/clover/walk/w.png"},
+    // {name: "walk-y",  type:"image", src: "data/img/clover/walk/y.png"}, 
+    // //eating     
+    // {name: "eat-b",  type:"image", src: "data/img/clover/eat/b.png"},
+    // {name: "eat-g",  type:"image", src: "data/img/clover/eat/g.png"},
+    // {name: "eat-o",  type:"image", src: "data/img/clover/eat/o.png"},
+    // {name: "eat-r",  type:"image", src: "data/img/clover/eat/r.png"},
+    // {name: "eat-v",  type:"image", src: "data/img/clover/eat/v.png"},
+    // {name: "eat-y",  type:"image", src: "data/img/clover/eat/y.png"},
     //end
     {name: "end",  type:"image", src: "data/img/clover/end.png"},
 
