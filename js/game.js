@@ -45,6 +45,8 @@ var game = {
         // add our player entity in the entity pool
         me.pool.register("mainPlayer", game.PlayerEntity);
         me.pool.register("VPCam", game.VPCam);
+        me.pool.register("LeafEntity", game.LeafEntity);
+
           // enable the keyboard
           me.input.bindKey(me.input.KEY.A, "r", true);
           me.input.bindKey(me.input.KEY.S, "b", true);

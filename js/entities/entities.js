@@ -1,3 +1,6 @@
+var curr_color = 'white'; //here's the global color variable
+
+
 /**
  * BS Camera
  */
@@ -75,37 +78,23 @@ game.PlayerEntity = me.Entity.extend({
      */
     update : function (dt) {
 
- //always walk right
+        //always walk right
         this.body.vel.x += this.body.accel.x * me.timer.tick;
+
 
         if (me.input.isKeyPressed('r')) {
           //change sprite to render
           this.renderable.setCurrentAnimation("walk-r");
+          //set global var
           
         }
         if (me.input.isKeyPressed('w')) {
-          //change sprite to render
           this.renderable.setCurrentAnimation("walk-w");
           
         }
-     
+
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
-     
-        // set the display to follow our position on both axis
-        //off = new me.Vector2d(-1, 0);
-        //console.log("x, ", this.pos.x);
-        //console.log("y, ", this.pos.y);
-        //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        //me.game.viewport.setDeadzone(0,0);
-
-       //  // Update the "tracking vector"
-       //  this.tracking.copy(this.pos).add(this.center);
-       //  // Set viewport to follow the "tracking vector"
-      
-
-       // // me.game.viewport.follow(this.tracking, me.game.viewport.AXIS_BOTH);
-
 
         // ensure the player is updated even when outside of the viewport
         this.alwaysUpdate = true;
@@ -123,7 +112,38 @@ game.PlayerEntity = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
-        // Make all other objects solid
-        return true;
+      return true;
     }
 });
+
+/*----------------
+  a Coin entity
+ ----------------- */
+game.LeafEntity = me.CollectableEntity.extend({
+  // extending the init function is not mandatory
+  // unless you need to add some extra initialization
+  init: function(x, y, settings) {
+    // call the parent constructor
+    this._super(me.CollectableEntity, 'init', [x, y , settings]);
+  },
+
+  // this function is called by the engine, when
+  // an object is touched by something
+  onCollision : function (response, other) {
+    if (LeafEntity.color == button_color) { // if leaf color is same as button(s) pressed color
+      // do something when leaf is eaten by chameleon
+
+      // play a "leaf eating" sound
+      // me.audio.play("eating-sound");
+
+      // make sure it cannot be eaten again
+      this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+
+      // remove the leaf if buttons pressed correspond to color of leaf
+      me.game.world.removeChild(this);
+    }
+  }
+});
+
+// register our object entities in the object pool
+me.pool.register("LeafEntity", game.LeafEntity);
