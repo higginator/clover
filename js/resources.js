@@ -1,5 +1,9 @@
 game.resources = [
 
+
+    { name : "texture", type : "json",  src : "data/texture/texture.json" },
+    { name : "texture", type : "image", src : "data/texture/texture.png" },
+
 	 //level tileset
     {name: "branches-01",  type:"image", src: "data/map/branches-01.png"},
     {name: "branches-02",  type:"image", src: "data/map/branches-02.png"},

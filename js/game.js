@@ -59,7 +59,12 @@ var game = {
           me.input.bindKey(me.input.KEY.P, "eat", true); //DEBUG- DELETE ME!
           me.input.bindKey(me.input.KEY.UP, "fin", true); //game is over
                   
+          //try sprites pt 2
 
+          game.texture = new me.video.renderer.Texture(
+                    me.loader.getJSON("texture"),
+                    me.loader.getImage("texture")
+                );
         // Start the game.
         me.state.change(me.state.PLAY);
     }

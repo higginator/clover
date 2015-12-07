@@ -43,60 +43,90 @@ game.PlayerEntity = me.Entity.extend({
         this._super(me.Entity, 'init', [x, y , settings]);
     this.alwaysUpdate = true;
 
-    this.renderables = {};
-    this.renderables.walkingSheet = this.renderable;
-    this.renderables.eatingSheet = new me.AnimationSheet(0, 0, {
-            image : "eat",
-            framewidth : 640,
-            frameheight : 308
-        });
-    this.renderables.finSheet = new me.AnimationSheet(0, 0, {
-            image : "end",
-            framewidth : 289,
-            frameheight : 291
-        });
+    //this is gonna be HUUUGE
+    this.renderable = game.texture.createAnimationFromName([
+    "b/b1", "b/b2", "b/b3", "b/b4",
+    "b/b5", "b/b6", "b/b7", "b/b8",
+    "b/b9", "b/b90", "b/b91", "b/b92",
+    "r/r1", "r/r2", "r/r3", "r/r4",
+    "r/r5", "r/r6", "r/r7", "r/r8",
+    "r/r9", "r/r90", "r/r91", "r/r92",
+    "y/y1", "y/y2", "y/y3", "y/y4",
+    "y/y5", "y/y6", "y/y7", "y/y8",
+    "y/y9", "y/y90", "y/y91", "y/y92",
+    "o/o1", "o/o2", "o/o3", "o/o4",
+    "o/o5", "o/o6", "o/o7", "o/o8",
+    "o/o9", "o/o90", "o/o91", "o/o92", 
+    "g/g1", "g/g2", "g/g3", "g/g4",
+    "g/g5", "g/g6", "g/g7", "g/g8",
+    "g/g9", "g/g90", "g/g91", "g/g92",       
+    "v/v1", "v/v2", "v/v3", "v/v4",
+    "v/v5", "v/v6", "v/v7", "v/v8",
+    "v/v9", "v/v90", "v/v91", "v/v92",
+    "br/br1", "br/br2", "br/br3", "br/br4",
+    "br/br5", "br/br6", "br/br7", "br/br8",
+    "br/br9", "br/br90", "br/br91", "br/br92",
+    "w/w1", "w/w2", "w/w3", "w/w4",
+    "w/w5", "w/w6", "w/w7", "w/w8",
+    "w/w9", "w/w90", "w/w91", "w/w92",
+    "b2","b3", "b5", "b6", "b7", "b9",
+    "r2","r3", "r5", "r6", "r7", "r9",     
+    "o2","o3", "o5", "o6", "o7", "o9",
+    "v2","v3", "v5", "v6", "v7", "v9",     
+    "y2","y3", "y5", "y6", "y7", "y9",
+    "g2","g3", "g5", "g6", "g7", "g10",     
 
-this.renderables.walkingSheet.alwaysUpdate = true;
-this.renderables.alwaysUpdate = true;
+]);
 
-    var spriteContainer = new me.Container(0,0,640,308);
-    spriteContainer.addChild(this.renderables.walkingSheet);
-    spriteContainer.addChild(this.renderables.eatingSheet);
-    spriteContainer.addChild(this.renderables.finSheet);
-    
-    spriteContainer.alwaysUpdate = true;
-
-    this.renderable = spriteContainer;
     this.renderable.alwaysUpdate = true;
-    // ensure the player is updated even when outside of the viewport
 
-        // define color walking animations using frame indexing
-        this.renderables.walkingSheet.addAnimation("walk-b", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-        this.renderables.walkingSheet.addAnimation("walk-br", [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]);
-        this.renderables.walkingSheet.addAnimation("walk-g", [24, 25, 26, 27, 28,29,30,31,32,33,34,35]);
-        this.renderables.walkingSheet.addAnimation("walk-o", [36,37,38,39,40,41,42,43,44,45,46,47]);
-        this.renderables.walkingSheet.addAnimation("walk-r", [48,49,50,51,52,53,54,55,56,57,58,59]);
-        this.renderables.walkingSheet.addAnimation("walk-v", [60,61,62,63,64,65,66,67,68,69,70,71]);
-        this.renderables.walkingSheet.addAnimation("walk-w", [72,73,74,75,76,77,78,79,80,81,82,83]);
-        this.renderables.walkingSheet.addAnimation("walk-y", [84,85,86,87,88,89,90,91,92,93,94,95]);
-        this.renderables.walkingSheet.addAnimation("none", [96,96,96,96,96,96,96,96,96,96,96,96]);
+    this.renderable.addAnimation("walk-w", 
+        ["w/w1", "w/w2", "w/w3", "w/w4",
+        "w/w5", "w/w6", "w/w7", "w/w8",
+        "w/w9", "w/w90", "w/w91", "w/w92"]);
+    this.renderable.addAnimation("walk-b", 
+        ["b/b1", "b/b2", "b/b3", "b/b4",
+        "b/b5", "b/b6", "b/b7", "b/b8",
+        "b/b9", "b/b90", "b/b91", "b/b92"]);
+    this.renderable.addAnimation("walk-br", 
+        ["br/br1", "br/br2", "br/br3", "br/br4",
+        "br/br5", "br/br6", "br/br7", "br/br8",
+        "br/br9", "br/br90", "br/br91", "br/br92"]);
+    this.renderable.addAnimation("walk-r", 
+        ["r/r1", "r/r2", "r/r3", "r/r4",
+        "r/r5", "r/r6", "r/r7", "r/r8",
+        "r/r9", "r/r90", "r/r91", "r/r92"]);
+    this.renderable.addAnimation("walk-o", 
+        ["o/o1", "o/o2", "o/o3", "o/o4",
+        "o/o5", "o/o6", "o/o7", "o/o8",
+        "o/o9", "o/o90", "o/o91", "o/o92"]);
+    this.renderable.addAnimation("walk-v", 
+        ["v/v1", "v/v2", "v/v3", "v/v4",
+        "v/v5", "v/v6", "v/v7", "v/v8",
+        "v/v9", "v/v90", "v/v91", "v/v92"]);
+    this.renderable.addAnimation("walk-g", 
+        ["g/g1", "g/g2", "g/g3", "g/g4",
+        "g/g5", "g/g6", "g/g7", "g/g8",
+        "g/g9", "g/g90", "g/g91", "g/g92"]);
+    this.renderable.addAnimation("walk-y", 
+        ["y/y1", "y/y2", "y/y3", "y/y4",
+        "y/y5", "y/y6", "y/y7", "y/y8",
+        "y/y9", "y/y90", "y/y91", "y/y92"]);
 
-        
-        this.renderables.eatingSheet.addAnimation("eat-b", [0, 1, 2, 3, 4, 5]);
-        this.renderables.eatingSheet.addAnimation("eat-g", [6, 8, 9, 10, 11, 7]);
-        this.renderables.eatingSheet.addAnimation("eat-o", [12, 13, 14, 15, 16, 17]);
-        this.renderables.eatingSheet.addAnimation("eat-r", [18, 19, 20, 21, 22, 23]);
-        this.renderables.eatingSheet.addAnimation("eat-v", [24, 25, 26, 27, 28, 29]);
-        this.renderables.eatingSheet.addAnimation("eat-y", [30, 31, 32, 33, 34, 35]);
-        this.renderables.eatingSheet.addAnimation("none", [37,37,37,37,37,37]);
+    this.renderable.addAnimation("eat-b", 
+        ["b2","b3", "b5", "b6", "b7", "b9"]);
+    this.renderable.addAnimation("eat-v", 
+        ["v2","v3", "v5", "v6", "v7", "v9"]);
+    this.renderable.addAnimation("eat-o", 
+        ["o2","o3", "o5", "o6", "o7", "o9"]);
+    this.renderable.addAnimation("eat-g", 
+        ["g2","g3", "g5", "g6", "g7", "g10"]);
+    this.renderable.addAnimation("eat-y", 
+        ["y2","y3", "y5", "y6", "y7", "y9"]);
+    this.renderable.addAnimation("eat-r", 
+        ["r2","r3", "r5", "r6", "r7", "r9"]);
 
-        this.renderables.finSheet.addAnimation("done", [0,1], 150);
-        this.renderables.finSheet.addAnimation("none", [2,2]);
-
-        // set the white animation as default
-        this.renderables.walkingSheet.setCurrentAnimation("walk-w");
-        this.renderables.eatingSheet.setCurrentAnimation("none");
-        this.renderables.finSheet.setCurrentAnimation("none");
+     this.renderable.setCurrentAnimation("walk-w");      
 
         // set the default horizontal & vertical speed (accel vector)
         this.body.setVelocity(3, 15);
@@ -115,53 +145,52 @@ this.renderables.alwaysUpdate = true;
 
         if (me.input.isKeyPressed('r')) {
           //change sprite to render
-          this.renderables.walkingSheet.setCurrentAnimation("walk-r");
+          this.renderable.setCurrentAnimation("walk-r");
           //set global var
           curr_color='red';
         }
         if (me.input.isKeyPressed('g')) {
-          this.renderables.walkingSheet.setCurrentAnimation("walk-g");
+          this.renderable.setCurrentAnimation("walk-g");
           curr_color='green';
         }
         if (me.input.isKeyPressed('w')) {
-          this.renderables.walkingSheet.setCurrentAnimation("walk-w");
+          this.renderable.setCurrentAnimation("walk-w");
           curr_color='white';
         }
         if (me.input.isKeyPressed('br')) {
-          this.renderables.walkingSheet.setCurrentAnimation("walk-br");
+          this.renderable.setCurrentAnimation("walk-br");
           curr_color='brown';
         }
         if (me.input.isKeyPressed('o')) {
-          this.renderables.walkingSheet.setCurrentAnimation("walk-o");
+          this.renderable.setCurrentAnimation("walk-o");
           curr_color='orange';
         }
         if (me.input.isKeyPressed('v')) {
-          this.renderables.walkingSheet.setCurrentAnimation("walk-v");
+          this.renderable.setCurrentAnimation("walk-v");
           curr_color='violet';
         }
         if (me.input.isKeyPressed('y')) {
-          this.renderables.walkingSheet.setCurrentAnimation("walk-y");
+          this.renderable.setCurrentAnimation("walk-y");
           curr_color='yellow';
         }
         if (me.input.isKeyPressed('b')) {
-          this.renderables.walkingSheet.setCurrentAnimation("walk-b");
+          this.renderable.setCurrentAnimation("walk-b");
           curr_color='blue';
         }
 
         if (me.input.isKeyPressed('eat')) {
         //define eating animations
-          this.renderables.eatingSheet.setCurrentAnimation("eat-b","none");
-          this.renderables.walkingSheet.setCurrentAnimation("none","walk-b");
+          this.renderable.setCurrentAnimation("eat-b","walk-b");
         }
 
-        if (me.input.isKeyPressed('fin')) {
-          this.body.vel = new me.Vector2d(0,0);
-          this.renderables.eatingSheet.setCurrentAnimation("none");
-          this.renderables.walkingSheet.setCurrentAnimation("none");
-          this.renderables.finSheet.setCurrentAnimation("done");
-          return;
+        // if (me.input.isKeyPressed('fin')) {
+        //   this.body.vel = new me.Vector2d(0,0);
+        //   this.renderables.eatingSheet.setCurrentAnimation("none");
+        //   this.renderable.setCurrentAnimation("none");
+        //   this.renderables.finSheet.setCurrentAnimation("done");
+        //   return;
 
-        }
+        // }
 
 
         // apply physics to the body (this moves the entity)
