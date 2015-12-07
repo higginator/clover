@@ -223,7 +223,7 @@ game.LeafB = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('blue') == 0) {
 			me.audio.play("eat");
-			//game.PlayerEntity.renderable.setCurrentAnimation("eat-b","walk-b");
+			other.renderable.setCurrentAnimation("eat-b","walk-b");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 		} else {
