@@ -1,4 +1,36 @@
 /**
+ * BS Camera
+ */
+game.VPCam = me.Entity.extend({
+
+    /**
+     * constructor
+     */
+    init:function (x, y, settings) {
+        // call the constructor
+        this._super(me.Entity, 'init', [x, y , settings]);
+      this.body.setVelocity(3, 15);
+
+
+    },
+
+    update : function (dt) {
+        //always walk right
+        this.body.vel.x += this.body.accel.x * me.timer.tick;
+        this.body.update(dt);
+        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        this.alwaysUpdate = true;
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    },
+   
+    onCollision : function (response, other) {
+        // Make all other objects solid
+        return true;
+    }
+});
+
+
+/**
  * Player Entity
  */
 game.PlayerEntity = me.Entity.extend({
@@ -17,6 +49,16 @@ game.PlayerEntity = me.Entity.extend({
         this.renderable.setCurrentAnimation("walk");
 
 
+        // Create a vector that represents the player center point
+        this.center = new me.Vector2d(this.hWidth, this.hHeight);
+
+        // Create the "tracking vector"
+        this.tracking = this.pos.clone();
+        //me.game.viewport.move(300,0);
+        // set the default horizontal & vertical speed (accel vector)
+        this.body.setVelocity(3, 15);
+
+
     },
 
     /**
@@ -24,11 +66,9 @@ game.PlayerEntity = me.Entity.extend({
      */
     update : function (dt) {
 
-
-        //always walk right
+ //always walk right
         this.body.vel.x += this.body.accel.x * me.timer.tick;
 
-     
         if (me.input.isKeyPressed('red')) {
           //change sprite to render
           //this.renderable.setCurrentAnimation("walk-red");
@@ -37,13 +77,22 @@ game.PlayerEntity = me.Entity.extend({
      
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
-
-        // set the default horizontal & vertical speed (accel vector)
-        this.body.setVelocity(3, 15);
      
         // set the display to follow our position on both axis
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-     
+        //off = new me.Vector2d(-1, 0);
+        //console.log("x, ", this.pos.x);
+        //console.log("y, ", this.pos.y);
+        //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        //me.game.viewport.setDeadzone(0,0);
+
+       //  // Update the "tracking vector"
+       //  this.tracking.copy(this.pos).add(this.center);
+       //  // Set viewport to follow the "tracking vector"
+      
+
+       // // me.game.viewport.follow(this.tracking, me.game.viewport.AXIS_BOTH);
+
+
         // ensure the player is updated even when outside of the viewport
         this.alwaysUpdate = true;
      

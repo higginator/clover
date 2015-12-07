@@ -15,12 +15,13 @@
   </data>
  </layer>
  <objectgroup name="mainPlayer">
-  <object name="mainPlayer" x="38.0445" y="285.334" width="481" height="308">
+  <object name="mainPlayer" x="-441.243" y="285.334" width="481" height="308">
    <properties>
     <property name="framewidth" value="481"/>
     <property name="image" value="walk-w"/>
    </properties>
   </object>
+  <object name="VPCam" x="284.149" y="434.783" width="100" height="100"/>
  </objectgroup>
  <objectgroup name="collision">
   <object x="-13.4864" y="635.24" width="12017.3" height="30"/>
