@@ -47,8 +47,8 @@ game.resources = [
     {name: "leaf-y",  type:"image", src: "data/img/leaf/y.png"},//w: 154
 
     
-        // //font
-    // {name: "32x32_font", type:"image", src: "data/img/font/idek.png"},
+    //font
+    {name: "32x32_font", type:"image", src: "data/img/font.png"},
 
     // Maps
     {name: "level-01", type: "tmx", src: "data/level-01.tmx"},

@@ -5,7 +5,10 @@ var game = {
     // an object where to store game information
     data : {
         // score
-        score : 0
+        score : 0,
+        high_score : 0,
+        textBox : "SCORE: ",
+        textBox2 : " / HIGH: ",
     },
 
 
