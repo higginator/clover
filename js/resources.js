@@ -1,5 +1,6 @@
 game.resources = [
 
+    {name: "title_screen", type: "image", src: "data/img/title.png"},
 
     { name : "texture", type : "json",  src : "data/texture/texture.json" },
     { name : "texture", type : "image", src : "data/texture/texture.png" },

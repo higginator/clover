@@ -71,6 +71,6 @@ var game = {
                     me.loader.getImage("texture")
                 );
         // Start the game.
-        me.state.change(me.state.PLAY);
+        me.state.change(me.state.MENU);
     }
 };

@@ -1,4 +1,7 @@
 var curr_color = 'white'; //here's the global color variable
+var redController = new gameController();
+var blueController = new gameController();
+var yellowController = new gameController();
 
 /**
  * BS Camera
@@ -42,7 +45,7 @@ game.PlayerEntity = me.Entity.extend({
 				// call the constructor
 				this._super(me.Entity, 'init', [x, y , settings]);
 		this.alwaysUpdate = true;
-
+		this.z = 50;
 		//this is gonna be HUUUGE
 		this.renderable = game.texture.createAnimationFromName([
 		"b/b1", "b/b2", "b/b3", "b/b4",
@@ -143,38 +146,54 @@ game.PlayerEntity = me.Entity.extend({
 				this.body.vel.x += .2*dt;
 
 
-				if (me.input.isKeyPressed('r')) {
+				if (shouldBeRed() || me.input.isKeyPressed('r')) {
 					//change sprite to render
-					this.renderable.setCurrentAnimation("walk-r");
+					if (!this.renderable.isCurrentAnimation("walk-r")) {
+						this.renderable.setCurrentAnimation("walk-r");
+					}
 					//set global var
 					curr_color='red';
 				}
-				if (me.input.isKeyPressed('g')) {
-					this.renderable.setCurrentAnimation("walk-g");
+				if (shouldBeGreen() || me.input.isKeyPressed('g')) {
+					if (!this.renderable.isCurrentAnimation("walk-g")) {
+						this.renderable.setCurrentAnimation("walk-g");
+					}
 					curr_color='green';
 				}
 				if (me.input.isKeyPressed('w')) {
-					this.renderable.setCurrentAnimation("walk-w");
+					if (!this.renderable.isCurrentAnimation("walk-w")) {
+						this.renderable.setCurrentAnimation("walk-w");
+					}
 					curr_color='white';
 				}
-				if (me.input.isKeyPressed('br')) {
-					this.renderable.setCurrentAnimation("walk-br");
+				if (shouldBeBrown() || me.input.isKeyPressed('br')) {
+					if (!this.renderable.isCurrentAnimation("walk-br")) {
+						this.renderable.setCurrentAnimation("walk-br");
+					}
 					curr_color='brown';
 				}
-				if (me.input.isKeyPressed('o')) {
-					this.renderable.setCurrentAnimation("walk-o");
+				if (shouldBeOrange() || me.input.isKeyPressed('o')) {
+					if (!this.renderable.isCurrentAnimation("walk-o")) {
+						this.renderable.setCurrentAnimation("walk-o");
+					}
 					curr_color='orange';
 				}
-				if (me.input.isKeyPressed('v')) {
-					this.renderable.setCurrentAnimation("walk-v");
+				if (shouldBeViolet() || me.input.isKeyPressed('v')) {
+					if (!this.renderable.isCurrentAnimation("walk-v")) {
+						this.renderable.setCurrentAnimation("walk-v");
+					}
 					curr_color='violet';
 				}
-				if (me.input.isKeyPressed('y')) {
-					this.renderable.setCurrentAnimation("walk-y");
+				if (shouldBeYellow() || me.input.isKeyPressed('y')) {
+					if (!this.renderable.isCurrentAnimation("walk-y")) {
+						this.renderable.setCurrentAnimation("walk-y");
+					}
 					curr_color='yellow';
 				}
-				if (me.input.isKeyPressed('b')) {
-					this.renderable.setCurrentAnimation("walk-b");
+				if (shouldBeBlue() || me.input.isKeyPressed('b')) {
+					if (!this.renderable.isCurrentAnimation("walk-b")) {
+						this.renderable.setCurrentAnimation("walk-b");
+					}
 					curr_color='blue';
 				}
 
@@ -223,7 +242,7 @@ game.LeafB = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('blue') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-b","walk-b");
+			other.renderable.setCurrentAnimation("eat-b","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -232,8 +251,11 @@ game.LeafB = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -245,7 +267,7 @@ game.LeafR = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('red') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-r","walk-r");
+			other.renderable.setCurrentAnimation("eat-r","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -254,8 +276,11 @@ game.LeafR = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -267,7 +292,7 @@ game.LeafO = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('orange') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-o","walk-o");
+			other.renderable.setCurrentAnimation("eat-o","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -276,8 +301,11 @@ game.LeafO = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -289,7 +317,7 @@ game.LeafV = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('violet') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-v","walk-v");
+			other.renderable.setCurrentAnimation("eat-v","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -298,8 +326,11 @@ game.LeafV = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -311,7 +342,7 @@ game.LeafG = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('green') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-g","walk-g");
+			other.renderable.setCurrentAnimation("eat-g","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -320,8 +351,11 @@ game.LeafG = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
+			setAllControllersUnpinged();
 		return false
 	}
 });
@@ -333,7 +367,7 @@ game.LeafY = me.CollectableEntity.extend({
 	onCollision : function (response, other) {
 		if (curr_color.localeCompare('yellow') == 0) {
 			me.audio.play("eat");
-			other.renderable.setCurrentAnimation("eat-y","walk-y");
+			other.renderable.setCurrentAnimation("eat-y","walk-w");
 			game.data.score += 1;
 			me.game.world.removeChild(this);
 			// me.timer.setTimeout(function () { //ok w/e i cant get this to work
@@ -342,9 +376,55 @@ game.LeafY = me.CollectableEntity.extend({
 			// }, 1000);
 		} else {
 			game.data.score = 0;
+			other.renderable.setCurrentAnimation("walk-w");
 		}
 			this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+			curr_color = "white";
+			setAllControllersUnpinged();
 			//reset code
 		return false
 	}
 });
+
+//gameController methods
+function setAllControllersUnpinged() {
+	redController.pinged = false;
+	blueController.pinged = false;
+	yellowController.pinged = false;
+}
+
+//colorChecks
+function shouldBeRed() {
+	if (redController.pinged && !blueController.pinged && !yellowController.pinged) { return true };
+	return false;
+}
+
+function shouldBeBlue() {
+	if (!redController.pinged && blueController.pinged && !yellowController.pinged) { return true };
+	return false;
+}
+
+function shouldBeYellow() {
+	if (!redController.pinged && !blueController.pinged && yellowController.pinged) { return true };
+	return false;
+}
+
+function shouldBeOrange() {
+	if (redController.pinged && !blueController.pinged && yellowController.pinged) { return true };
+	return false;
+}
+
+function shouldBeViolet() {
+	if (redController.pinged && blueController.pinged && !yellowController.pinged) { return true };
+	return false;
+}
+
+function shouldBeGreen() {
+	if (!redController.pinged && blueController.pinged && yellowController.pinged) { return true };
+	return false;
+}
+
+function shouldBeBrown() {
+	if (redController.pinged && blueController.pinged && yellowController.pinged) { return true };
+	return false;
+}

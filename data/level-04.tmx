@@ -31,10 +31,49 @@
     <property name="image" value="leaf-g"/>
    </properties>
   </object>
-  <object name="LeafB" x="615.615" y="334.958" width="290" height="215">
+  <object name="LeafB" x="3308.44" y="334.958" width="290" height="215">
    <properties>
     <property name="framewidth" value="190"/>
     <property name="image" value="leaf-b"/>
+   </properties>
+  </object>
+  <object name="LeafG" x="5426.99" y="365.483" width="273" height="215">
+   <properties>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-g"/>
+   </properties>
+  </object>
+  <object name="LeafB" x="6223.27" y="334.958" width="290" height="215">
+   <properties>
+    <property name="framewidth" value="190"/>
+    <property name="image" value="leaf-b"/>
+   </properties>
+  </object>
+  <object name="LeafG" x="8380.53" y="348.89" width="273" height="215">
+   <properties>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-g"/>
+   </properties>
+  </object>
+  <object name="LeafB" x="8756.45" y="351.551" width="290" height="215">
+   <properties>
+    <property name="framewidth" value="190"/>
+    <property name="image" value="leaf-b"/>
+   </properties>
+  </object>
+  <object name="LeafB" x="10741.1" y="345.662" width="290" height="215">
+   <properties>
+    <property name="framewidth" value="190"/>
+    <property name="image" value="leaf-b"/>
+   </properties>
+  </object>
+  <object name="LeafG" x="11172" y="348.89" width="273" height="215">
+   <properties>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-g"/>
    </properties>
   </object>
  </objectgroup>
@@ -67,6 +106,101 @@
    </properties>
   </object>
   <object name="LeafV" x="2856.84" y="348.301" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="214"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-v"/>
+   </properties>
+  </object>
+  <object name="LeafY" x="3749.05" y="339.093" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-y"/>
+   </properties>
+  </object>
+  <object name="LeafR" x="4151.2" y="345.859" width="290" height="215">
+   <properties>
+    <property name="framewidth" value="155"/>
+    <property name="image" value="leaf-r"/>
+   </properties>
+  </object>
+  <object name="LeafV" x="4568.61" y="355.067" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="214"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-v"/>
+   </properties>
+  </object>
+  <object name="LeafO" x="4986.94" y="349.697" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="212"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-o"/>
+   </properties>
+  </object>
+  <object name="LeafY" x="5828.7" y="344.624" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-y"/>
+   </properties>
+  </object>
+  <object name="LeafO" x="6607.51" y="327.573" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="212"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-o"/>
+   </properties>
+  </object>
+  <object name="LeafR" x="7077.09" y="351.39" width="290" height="215">
+   <properties>
+    <property name="framewidth" value="155"/>
+    <property name="image" value="leaf-r"/>
+   </properties>
+  </object>
+  <object name="LeafO" x="7498" y="333.104" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="212"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-o"/>
+   </properties>
+  </object>
+  <object name="LeafY" x="7958.12" y="339.093" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="203"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-y"/>
+   </properties>
+  </object>
+  <object name="LeafV" x="9137.2" y="366.191" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="214"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-v"/>
+   </properties>
+  </object>
+  <object name="LeafR" x="9521.78" y="351.39" width="290" height="215">
+   <properties>
+    <property name="framewidth" value="155"/>
+    <property name="image" value="leaf-r"/>
+   </properties>
+  </object>
+  <object name="LeafO" x="9912.6" y="344.883" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="212"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-o"/>
+   </properties>
+  </object>
+  <object name="LeafV" x="10326.8" y="342.634" width="290" height="215">
+   <properties>
+    <property name="frameheight" value="214"/>
+    <property name="framewidth" value="154"/>
+    <property name="image" value="leaf-v"/>
+   </properties>
+  </object>
+  <object name="LeafV" x="11575.4" y="330.855" width="290" height="215">
    <properties>
     <property name="frameheight" value="214"/>
     <property name="framewidth" value="154"/>
