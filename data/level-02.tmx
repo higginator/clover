@@ -204,7 +204,7 @@
   <properties>
    <property name="duration" value="250"/>
    <property name="fade" value="#000000"/>
-   <property name="to" value="area_02"/>
+   <property name="to" value="level_03"/>
   </properties>
  </objectgroup>
 </map>

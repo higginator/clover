@@ -208,4 +208,11 @@
   </object>
   <object id="5" name="VPCam" x="152.968" y="434.783" width="100" height="100"/>
  </objectgroup>
+ <objectgroup name="me.LevelEntity">
+  <properties>
+   <property name="duration" value="250"/>
+   <property name="fade" value="#000000"/>
+   <property name="to" value="level_02"/>
+  </properties>
+ </objectgroup>
 </map>
