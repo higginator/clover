@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="120" height="7" tilewidth="100" tileheight="100" nextobjectid="30">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="120" height="7" tilewidth="100" tileheight="100" nextobjectid="36">
  <tileset firstgid="1" name="branches-01" tilewidth="100" tileheight="100" tilecount="48">
   <image source="map/branches-01.png" width="1200" height="400"/>
  </tileset>
@@ -199,6 +199,20 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="me.LevelEntity">
+  <properties>
+   <property name="duration" value="200"/>
+   <property name="fade" value="#FFFFFF"/>
+   <property name="to" value="level_02"/>
+  </properties>
+  <object id="33" name="me.LevelEntity" x="11884.8" y="249.7" width="112.845" height="362.545">
+   <properties>
+    <property name="duration" value="200"/>
+    <property name="fade" value="#FFFFFF"/>
+    <property name="to" value="level-02"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup name="mainPlayer">
   <object id="4" name="mainPlayer" x="-441.243" y="285.334" width="481" height="308">
    <properties>
@@ -207,12 +221,5 @@
    </properties>
   </object>
   <object id="5" name="VPCam" x="152.968" y="434.783" width="100" height="100"/>
- </objectgroup>
- <objectgroup name="me.LevelEntity">
-  <properties>
-   <property name="duration" value="250"/>
-   <property name="fade" value="#000000"/>
-   <property name="to" value="level_02"/>
-  </properties>
  </objectgroup>
 </map>
