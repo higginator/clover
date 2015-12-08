@@ -52,6 +52,10 @@ game.resources = [
 
     // Maps
     {name: "level-01", type: "tmx", src: "data/level-01.tmx"},
+    {name: "level-02", type: "tmx", src: "data/level-02.tmx"},
+    {name: "level-03", type: "tmx", src: "data/level-03.tmx"},
+    {name: "level-04", type: "tmx", src: "data/level-04.tmx"},
+
 	
     // Background Music
 	{name: "bg", type: "audio", src: "data/bgm/"},
