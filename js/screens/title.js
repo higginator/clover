@@ -3,15 +3,18 @@ game.TitleScreen = me.ScreenObject.extend({
      *  action to perform on state change
      */
     onResetEvent: function() {
+        console.log('aaaaaaa');
+    var background = new me.Sprite(
+        0, 
+        0,
+        {
+            image : me.loader.getImage("title_screen")
+        }
+    );
 
-        me.game.world.addChild(
-            new me.Sprite (
-                0,0,
-                me.loader.getImage('title_screen')
-            ),
-            1
-        );
-        
+// add to the scene
+me.game.world.addChild(background, 1);
+        console.log('bldfsdf');
         // change to play state on press Enter or click/tap
         me.input.bindKey(me.input.KEY.ENTER, "enter", true);
         me.input.bindPointer(me.input.mouse.LEFT, me.input.KEY.ENTER);
