@@ -45,7 +45,7 @@ game.PlayerEntity = me.Entity.extend({
 				// call the constructor
 				this._super(me.Entity, 'init', [x, y , settings]);
 		this.alwaysUpdate = true;
-
+		this.z = 50;
 		//this is gonna be HUUUGE
 		this.renderable = game.texture.createAnimationFromName([
 		"b/b1", "b/b2", "b/b3", "b/b4",
