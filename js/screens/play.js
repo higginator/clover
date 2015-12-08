@@ -6,6 +6,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
         // load a level
         me.levelDirector.loadLevel("level-01");
+
         me.audio.playTrack("bg");
 
         // reset the score
