@@ -52,6 +52,11 @@ app.get('/', function(request, response) {
   response.sendfile('index.html', {root: __dirname});
 });
 
+
+app.get('/admin', function(request, response) {
+  response.sendfile('admin.html', {root: __dirname});
+});
+
 app.get('/red', function(request, response) {
   response.send('<h1>red sent to game</h1>');
   io.emit('red');
@@ -69,7 +74,22 @@ app.get('/yellow', function(request, response) {
 
 io.on('connection', function(socket) {
   console.log('new user connected');
+
+
+  //admin controls
+  socket.on('red', function(socket) {
+    io.emit('red');
+  });
+
+  socket.on('blue', function(socket) {
+    io.emit('blue');
+  });
+
+  socket.on('yellow', function(socket) {
+    io.emit('yellow');
+  });
 })
+
 
 /*
 http.listen(3000, function() {

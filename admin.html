@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style type="text/css">
+			button {
+				width:300px;
+				height:300px;
+				border-radius: 25px;
+			}
+			#redButton {
+				background-color: #FF2A24;
+			}
+			#blueButton
+			{
+				background-color: #2B59BB;
+			}
+			#yellowButton {
+				background-color: #FFEE24;
+			}
+		</style>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+        	$(document).ready(function() {
+        		var socket = io();
+				$('#redButton').click(function() {
+	        		socket.emit('red');
+	        	});
+	        	$('#blueButton').click(function() {
+	        		socket.emit('blue');
+	        	});
+	        	$('#yellowButton').click(function() {
+	        		socket.emit('yellow');
+	        	});
+        	});
+        </script>
+	</head>
+	<body>
+		<button id='redButton'></button>
+		<button id='blueButton'></button>
+		<button id='yellowButton'></button>
+	</body>
+</html>
