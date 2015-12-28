@@ -72,6 +72,22 @@ app.get('/yellow', function(request, response) {
   io.emit('yellow');
 });
 
+//single button controls
+
+app.get('/yellow_button', function(request, response) {
+  response.sendfile('yellow_button.html', {root: __dirname});
+
+});
+
+app.get('/red_button', function(request, response) {
+  response.sendfile('red_button.html', {root: __dirname});
+});
+
+app.get('/blue_button', function(request, response) {
+  response.sendfile('blue_button.html', {root: __dirname});
+
+});
+
 io.on('connection', function(socket) {
   console.log('new user connected');
 
